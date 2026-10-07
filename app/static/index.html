@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>PoE2 Ladder Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <h1>PoE2 LADDER TRACKER</h1>
+
+  <!-- Экран входа -->
+  <div id="auth-screen">
+    <div class="panel">
+      <h2>Вход</h2>
+      <label>Почта</label><input id="login-email" type="email">
+      <label>Пароль</label><input id="login-password" type="password">
+      <button id="btn-login">Войти</button>
+      <div class="msg" id="login-msg"></div>
+    </div>
+    <div class="panel">
+      <h2>Регистрация</h2>
+      <label>Имя</label><input id="reg-username" maxlength="32">
+      <label>Почта</label><input id="reg-email" type="email">
+      <label>Пароль (мин. 8 символов)</label><input id="reg-password" type="password">
+      <button id="btn-register">Создать аккаунт</button>
+      <div class="msg" id="reg-msg"></div>
+    </div>
+  </div>
+
+  <!-- Экран приложения -->
+  <div id="app-screen" class="hidden">
+    <div class="top-bar">
+      <span id="hello"></span>
+      <button class="small ghost" id="btn-logout">Выйти</button>
+    </div>
+
+    <div class="panel">
+      <h2>Добавить персонажа</h2>
+      <label>Лига</label><select id="league"></select>
+      <label>Имя персонажа или аккаунта</label><input id="char-name" maxlength="64">
+      <button id="btn-add">
+        <span class="btn-text">Добавить</span>
+        <span class="spinner btn-spinner" style="display:none;"></span>
+      </button>
+      <div class="msg" id="add-msg"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Мои персонажи</h2>
+      <div id="chars"><div class="spinner">Загрузка…</div></div>
+    </div>
+
+    <div class="panel hidden" id="ladder-panel">
+      <h2 id="ladder-title">Позиция в лайдере</h2>
+      <div class="ladder" id="ladder"></div>
+    </div>
+  </div>
+</div>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
